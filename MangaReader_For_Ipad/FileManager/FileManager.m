@@ -11,43 +11,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FileManager()
-@property (nonatomic) NSArray *allowedFileExtensions;
+-(NSString*)getExtensionFromFileWithURL:(NSURL*)url
 @end
 
 @implementation FileManager
-
--(id)init
-{
-    if(self=[super init])
-    {
-        self.allowedFileExtensions=[NSArray arrayWithObjects:@"rar",@"cbr",@"zip",@"cbz",nil];
-    }
-    return self;
-}
-
-//Fetch all files from a directory in a URL
--(NSArray*)getFilesFromDirectoryWithURL:(NSURL*)url
-{
-    
-    NSFileManager *fileManager=[[NSFileManager alloc] init];
-    
-    NSArray *keys=[NSArray arrayWithObjects:NSURLNameKey,NSURLAddedToDirectoryDateKey,NSURLIsDirectoryKey,NSURLIsHiddenKey,NSURLIsRegularFileKey,NSURLVolumeURLKey,nil];
-    
-
-    NSDirectoryEnumerator* dirEnumerator=[fileManager enumeratorAtURL:url includingPropertiesForKeys:keys options:NSDirectoryEnumerationSkipsPackageDescendants|NSDirectoryEnumerationSkipsSubdirectoryDescendants errorHandler:nil];
-
-    NSMutableArray *files=[[NSMutableArray alloc] init];
-    int i=0;
-    for(NSURL *fileURL in dirEnumerator)
-    {
-        [files addObject:fileURL];
-        i++;
-    }
-    
-    NSArray *returnFiles=[NSArray arrayWithArray:files];
-    return returnFiles;
-}
-
 -(BOOL)isDirectory:(NSURL*)url
 {
     NSNumber *isDirectory;
@@ -62,4 +29,30 @@
     return [isDirectory boolValue];
 }
 
+-(BOOL)isValidArchiveFile:(NSURL*)url
+{
+    NSString *ext=[self getExtensionFromFileWithURL:url];
+    if(![ARCHIVE_FILE_TYPES containsString:ext])
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(BOOL)isValidImageFile:(NSURL*)url
+{
+    NSString *ext=[self getExtensionFromFileWithURL:url];
+    if(![IMAGE_FILE_TYPES containsString:ext])
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(NSString*)getExtensionFromFileWithURL:(NSURL*)url
+{
+    return [[url path] pathExtension];
+}
 @end

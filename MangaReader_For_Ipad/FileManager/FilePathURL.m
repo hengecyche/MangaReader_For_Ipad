@@ -10,6 +10,23 @@
 
 @implementation FilePathURL
 
++(NSURL*)databaseDirectory
+{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    NSURL *newURL=[[self documentDirectory] URLByAppendingPathComponent:@"Thumbs" isDirectory:YES];
+    if([newURL checkResourceIsReachableAndReturnError:nil]==NO)
+    {
+        NSError *error;
+        if(![fileManager createDirectoryAtURL:newURL withIntermediateDirectories:YES attributes:nil error:&error])
+        {
+            NSLog(@"Error Occurred: %ld - %@",(long)error.code,error.localizedDescription);
+            return nil;
+        }
+    }
+    return newURL;
+}
+
 +(NSURL*)documentDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

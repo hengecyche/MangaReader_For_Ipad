@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataHandler.h"
+#import "FilePathURL.h"
 
 @implementation CoreDataHandler
 #define modelName "MangaReader"
@@ -14,6 +15,7 @@
 #pragma mark - Core Data Initialization
 -(id)init
 {
+    
     self=[super init];
     if(self)
     {
@@ -54,15 +56,12 @@
 }
 
 #pragma mark - Database Path
-- (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "animeout.LNReader" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
+
 
 -(NSURL*)storeURL
 {
     NSString *url=[NSString stringWithFormat:@"%s.%s",modelName,"sqlite"];
-    return [[self applicationDocumentsDirectory] URLByAppendingPathComponent:url];
+    return [[FilePathURL databaseDirectory] URLByAppendingPathComponent:url];
 }
 
 #pragma mark - Core Data Components

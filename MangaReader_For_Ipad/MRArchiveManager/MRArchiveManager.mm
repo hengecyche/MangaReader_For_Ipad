@@ -7,9 +7,9 @@
 //
 
 
+#import "Constants.h"
 #import "MRArchiveManager.h"
-NSString *const FILE_TYPES=@"zip,cbz,rar,cbr";
-NSString *const IMAGE_FILE_TYPES=@"jpg,png,jpeg,gif";
+
 
 @interface MRArchiveManager()<NSFileManagerDelegate>
 
@@ -29,7 +29,7 @@ NSString *const IMAGE_FILE_TYPES=@"jpg,png,jpeg,gif";
     {
         if(url && [url isFileURL])
         {
-            if([FILE_TYPES containsString:[url pathExtension]])
+            if([ARCHIVE_FILE_TYPES containsString:[url pathExtension]])
             {
                 _archiveURL=url;
                 _archiveExtension=[url pathExtension];
@@ -147,7 +147,7 @@ NSString *const IMAGE_FILE_TYPES=@"jpg,png,jpeg,gif";
     NSError* error;
     if(![manager copyItemAtURL:fileURL toURL:finalURL error:&error])
     {
-        NSLog(@"Couldn't write files. Error: %ld %@",error.code,error.localizedDescription);
+        NSLog(@"Couldn't write files. Error: %ld %@",(long)error.code,error.localizedDescription);
     }
     
     return finalURL;

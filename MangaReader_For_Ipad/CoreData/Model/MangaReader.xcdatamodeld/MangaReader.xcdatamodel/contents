@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10169.1" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Archive_Meta" syncable="YES">
+        <attribute name="archiveName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="archiveStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="archiveType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentPage" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isManga" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastAccessedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="numberOfFilesInArchive" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="File_System" representedClassName="File_System" syncable="YES">
+        <attribute name="fileId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileThumb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isDirectory" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="File_System" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Archive_Meta" positionX="-54" positionY="-9" width="128" height="150"/>
+    </elements>
+</model>

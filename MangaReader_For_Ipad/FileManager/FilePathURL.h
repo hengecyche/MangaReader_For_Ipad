@@ -13,4 +13,5 @@
 +(NSURL*)documentDirectory;
 +(NSURL*)thumbDirectory;
 +(NSURL*)tempDirectory;
++(NSURL*)databaseDirectory;
 @end
