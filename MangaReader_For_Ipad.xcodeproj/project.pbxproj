@@ -8,14 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		6532586F1C9A7C80001513F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532586E1C9A7C80001513F2 /* main.m */; };
-		653258721C9A7C80001513F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258711C9A7C80001513F2 /* AppDelegate.m */; };
+		653258721C9A7C80001513F2 /* MRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258711C9A7C80001513F2 /* MRAppDelegate.m */; };
 		653258751C9A7C80001513F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258741C9A7C80001513F2 /* ViewController.m */; };
 		653258781C9A7C80001513F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653258761C9A7C80001513F2 /* Main.storyboard */; };
-		6532587B1C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653258791C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodeld */; };
 		6532587D1C9A7C80001513F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6532587C1C9A7C80001513F2 /* Assets.xcassets */; };
 		653258801C9A7C81001513F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6532587E1C9A7C81001513F2 /* LaunchScreen.storyboard */; };
 		6532588B1C9A7C81001513F2 /* MangaReader_For_IpadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6532588A1C9A7C81001513F2 /* MangaReader_For_IpadTests.m */; };
 		653258961C9A7C82001513F2 /* MangaReader_For_IpadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258951C9A7C82001513F2 /* MangaReader_For_IpadUITests.m */; };
+		653258AC1C9A7E01001513F2 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258A61C9A7E01001513F2 /* FileManager.m */; };
+		653258AD1C9A7E01001513F2 /* FilePathURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258A81C9A7E01001513F2 /* FilePathURL.m */; };
+		653258AE1C9A7E01001513F2 /* MRArchiveManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 653258AB1C9A7E01001513F2 /* MRArchiveManager.mm */; };
+		653258B21C9A7E89001513F2 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258B11C9A7E89001513F2 /* CoreDataHandler.m */; };
+		653258DC1C9A7EF8001513F2 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258B91C9A7EF8001513F2 /* aescrypt.c */; };
+		653258DD1C9A7EF8001513F2 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258BA1C9A7EF8001513F2 /* aeskey.c */; };
+		653258DE1C9A7EF8001513F2 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258BC1C9A7EF8001513F2 /* aestab.c */; };
+		653258DF1C9A7EF8001513F2 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258C01C9A7EF8001513F2 /* entropy.c */; };
+		653258E01C9A7EF8001513F2 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258C21C9A7EF8001513F2 /* fileenc.c */; };
+		653258E11C9A7EF8001513F2 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258C41C9A7EF8001513F2 /* hmac.c */; };
+		653258E21C9A7EF8001513F2 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258C61C9A7EF8001513F2 /* prng.c */; };
+		653258E31C9A7EF8001513F2 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258C81C9A7EF8001513F2 /* pwd2key.c */; };
+		653258E41C9A7EF8001513F2 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258CA1C9A7EF8001513F2 /* sha1.c */; };
+		653258E51C9A7EF8001513F2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 653258CD1C9A7EF8001513F2 /* Info.plist */; };
+		653258E61C9A7EF8001513F2 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258D01C9A7EF8001513F2 /* ioapi.c */; };
+		653258E71C9A7EF8001513F2 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258D21C9A7EF8001513F2 /* mztools.c */; };
+		653258E81C9A7EF8001513F2 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258D41C9A7EF8001513F2 /* unzip.c */; };
+		653258E91C9A7EF8001513F2 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 653258D61C9A7EF8001513F2 /* zip.c */; };
+		653258EA1C9A7EF8001513F2 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 653258D91C9A7EF8001513F2 /* SSZipArchive.m */; };
+		653258EB1C9A7EF8001513F2 /* Unrar4iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258DB1C9A7EF8001513F2 /* Unrar4iOS.framework */; };
+		653258ED1C9A7F20001513F2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258EC1C9A7F20001513F2 /* CoreData.framework */; };
+		653258EF1C9A7FB6001513F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258EE1C9A7FB6001513F2 /* libz.tbd */; };
+		653258F11C9A7FC7001513F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258F01C9A7FC7001513F2 /* UIKit.framework */; };
+		653258F31C9A7FCF001513F2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258F21C9A7FCF001513F2 /* CoreFoundation.framework */; };
+		653258F51C9A7FD7001513F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258F41C9A7FD7001513F2 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +62,11 @@
 /* Begin PBXFileReference section */
 		6532586A1C9A7C7E001513F2 /* MangaReader_For_Ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader_For_Ipad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6532586E1C9A7C80001513F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		653258701C9A7C80001513F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		653258711C9A7C80001513F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		653258701C9A7C80001513F2 /* MRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRAppDelegate.h; sourceTree = "<group>"; };
+		653258711C9A7C80001513F2 /* MRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRAppDelegate.m; sourceTree = "<group>"; };
 		653258731C9A7C80001513F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		653258741C9A7C80001513F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		653258771C9A7C80001513F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6532587A1C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MangaReader_For_Ipad.xcdatamodel; sourceTree = "<group>"; };
 		6532587C1C9A7C80001513F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6532587F1C9A7C81001513F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653258811C9A7C81001513F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +76,55 @@
 		653258911C9A7C82001513F2 /* MangaReader_For_IpadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangaReader_For_IpadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		653258951C9A7C82001513F2 /* MangaReader_For_IpadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangaReader_For_IpadUITests.m; sourceTree = "<group>"; };
 		653258971C9A7C82001513F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653258A51C9A7E01001513F2 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		653258A61C9A7E01001513F2 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		653258A71C9A7E01001513F2 /* FilePathURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePathURL.h; sourceTree = "<group>"; };
+		653258A81C9A7E01001513F2 /* FilePathURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathURL.m; sourceTree = "<group>"; };
+		653258AA1C9A7E01001513F2 /* MRArchiveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRArchiveManager.h; sourceTree = "<group>"; };
+		653258AB1C9A7E01001513F2 /* MRArchiveManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MRArchiveManager.mm; sourceTree = "<group>"; };
+		653258B01C9A7E89001513F2 /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		653258B11C9A7E89001513F2 /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		653258B71C9A7EF8001513F2 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		653258B81C9A7EF8001513F2 /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
+		653258B91C9A7EF8001513F2 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		653258BA1C9A7EF8001513F2 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		653258BB1C9A7EF8001513F2 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		653258BC1C9A7EF8001513F2 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		653258BD1C9A7EF8001513F2 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		653258BE1C9A7EF8001513F2 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		653258BF1C9A7EF8001513F2 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		653258C01C9A7EF8001513F2 /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
+		653258C11C9A7EF8001513F2 /* entropy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
+		653258C21C9A7EF8001513F2 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		653258C31C9A7EF8001513F2 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		653258C41C9A7EF8001513F2 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		653258C51C9A7EF8001513F2 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		653258C61C9A7EF8001513F2 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		653258C71C9A7EF8001513F2 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		653258C81C9A7EF8001513F2 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		653258C91C9A7EF8001513F2 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		653258CA1C9A7EF8001513F2 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		653258CB1C9A7EF8001513F2 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		653258CC1C9A7EF8001513F2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		653258CD1C9A7EF8001513F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653258CF1C9A7EF8001513F2 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		653258D01C9A7EF8001513F2 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		653258D11C9A7EF8001513F2 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		653258D21C9A7EF8001513F2 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		653258D31C9A7EF8001513F2 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		653258D41C9A7EF8001513F2 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		653258D51C9A7EF8001513F2 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		653258D61C9A7EF8001513F2 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		653258D71C9A7EF8001513F2 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		653258D81C9A7EF8001513F2 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		653258D91C9A7EF8001513F2 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		653258DA1C9A7EF8001513F2 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		653258DB1C9A7EF8001513F2 /* Unrar4iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Unrar4iOS.framework; sourceTree = "<group>"; };
+		653258EC1C9A7F20001513F2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		653258EE1C9A7FB6001513F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		653258F01C9A7FC7001513F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		653258F21C9A7FCF001513F2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		653258F41C9A7FD7001513F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +132,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653258F51C9A7FD7001513F2 /* Foundation.framework in Frameworks */,
+				653258F31C9A7FCF001513F2 /* CoreFoundation.framework in Frameworks */,
+				653258F11C9A7FC7001513F2 /* UIKit.framework in Frameworks */,
+				653258EF1C9A7FB6001513F2 /* libz.tbd in Frameworks */,
+				653258ED1C9A7F20001513F2 /* CoreData.framework in Frameworks */,
+				653258EB1C9A7EF8001513F2 /* Unrar4iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,15 +181,18 @@
 		6532586C1C9A7C80001513F2 /* MangaReader_For_Ipad */ = {
 			isa = PBXGroup;
 			children = (
-				653258701C9A7C80001513F2 /* AppDelegate.h */,
-				653258711C9A7C80001513F2 /* AppDelegate.m */,
+				653258AF1C9A7E89001513F2 /* CoreData */,
+				653258A41C9A7E01001513F2 /* FileManager */,
+				653258A91C9A7E01001513F2 /* MRArchiveManager */,
+				653258701C9A7C80001513F2 /* MRAppDelegate.h */,
+				653258711C9A7C80001513F2 /* MRAppDelegate.m */,
 				653258731C9A7C80001513F2 /* ViewController.h */,
 				653258741C9A7C80001513F2 /* ViewController.m */,
 				653258761C9A7C80001513F2 /* Main.storyboard */,
 				6532587C1C9A7C80001513F2 /* Assets.xcassets */,
 				6532587E1C9A7C81001513F2 /* LaunchScreen.storyboard */,
 				653258811C9A7C81001513F2 /* Info.plist */,
-				653258791C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodeld */,
+				653258B41C9A7EF8001513F2 /* FrameWorks */,
 				6532586D1C9A7C80001513F2 /* Supporting Files */,
 			);
 			path = MangaReader_For_Ipad;
@@ -141,6 +222,107 @@
 				653258971C9A7C82001513F2 /* Info.plist */,
 			);
 			path = MangaReader_For_IpadUITests;
+			sourceTree = "<group>";
+		};
+		653258A41C9A7E01001513F2 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				653258A51C9A7E01001513F2 /* FileManager.h */,
+				653258A61C9A7E01001513F2 /* FileManager.m */,
+				653258A71C9A7E01001513F2 /* FilePathURL.h */,
+				653258A81C9A7E01001513F2 /* FilePathURL.m */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		653258A91C9A7E01001513F2 /* MRArchiveManager */ = {
+			isa = PBXGroup;
+			children = (
+				653258AA1C9A7E01001513F2 /* MRArchiveManager.h */,
+				653258AB1C9A7E01001513F2 /* MRArchiveManager.mm */,
+			);
+			path = MRArchiveManager;
+			sourceTree = "<group>";
+		};
+		653258AF1C9A7E89001513F2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				653258B01C9A7E89001513F2 /* CoreDataHandler.h */,
+				653258B11C9A7E89001513F2 /* CoreDataHandler.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		653258B41C9A7EF8001513F2 /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				653258F41C9A7FD7001513F2 /* Foundation.framework */,
+				653258F21C9A7FCF001513F2 /* CoreFoundation.framework */,
+				653258F01C9A7FC7001513F2 /* UIKit.framework */,
+				653258EE1C9A7FB6001513F2 /* libz.tbd */,
+				653258EC1C9A7F20001513F2 /* CoreData.framework */,
+				653258B51C9A7EF8001513F2 /* SSZipArchive */,
+				653258DB1C9A7EF8001513F2 /* Unrar4iOS.framework */,
+			);
+			path = FrameWorks;
+			sourceTree = "<group>";
+		};
+		653258B51C9A7EF8001513F2 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				653258B61C9A7EF8001513F2 /* aes */,
+				653258CC1C9A7EF8001513F2 /* Common.h */,
+				653258CD1C9A7EF8001513F2 /* Info.plist */,
+				653258CE1C9A7EF8001513F2 /* minizip */,
+				653258D81C9A7EF8001513F2 /* SSZipArchive.h */,
+				653258D91C9A7EF8001513F2 /* SSZipArchive.m */,
+				653258DA1C9A7EF8001513F2 /* ZipArchive.h */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		653258B61C9A7EF8001513F2 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				653258B71C9A7EF8001513F2 /* aes.h */,
+				653258B81C9A7EF8001513F2 /* aes_via_ace.h */,
+				653258B91C9A7EF8001513F2 /* aescrypt.c */,
+				653258BA1C9A7EF8001513F2 /* aeskey.c */,
+				653258BB1C9A7EF8001513F2 /* aesopt.h */,
+				653258BC1C9A7EF8001513F2 /* aestab.c */,
+				653258BD1C9A7EF8001513F2 /* aestab.h */,
+				653258BE1C9A7EF8001513F2 /* brg_endian.h */,
+				653258BF1C9A7EF8001513F2 /* brg_types.h */,
+				653258C01C9A7EF8001513F2 /* entropy.c */,
+				653258C11C9A7EF8001513F2 /* entropy.h */,
+				653258C21C9A7EF8001513F2 /* fileenc.c */,
+				653258C31C9A7EF8001513F2 /* fileenc.h */,
+				653258C41C9A7EF8001513F2 /* hmac.c */,
+				653258C51C9A7EF8001513F2 /* hmac.h */,
+				653258C61C9A7EF8001513F2 /* prng.c */,
+				653258C71C9A7EF8001513F2 /* prng.h */,
+				653258C81C9A7EF8001513F2 /* pwd2key.c */,
+				653258C91C9A7EF8001513F2 /* pwd2key.h */,
+				653258CA1C9A7EF8001513F2 /* sha1.c */,
+				653258CB1C9A7EF8001513F2 /* sha1.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		653258CE1C9A7EF8001513F2 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				653258CF1C9A7EF8001513F2 /* crypt.h */,
+				653258D01C9A7EF8001513F2 /* ioapi.c */,
+				653258D11C9A7EF8001513F2 /* ioapi.h */,
+				653258D21C9A7EF8001513F2 /* mztools.c */,
+				653258D31C9A7EF8001513F2 /* mztools.h */,
+				653258D41C9A7EF8001513F2 /* unzip.c */,
+				653258D51C9A7EF8001513F2 /* unzip.h */,
+				653258D61C9A7EF8001513F2 /* zip.c */,
+				653258D71C9A7EF8001513F2 /* zip.h */,
+			);
+			path = minizip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +392,7 @@
 				TargetAttributes = {
 					653258691C9A7C7E001513F2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7CXRHWNEX5;
 					};
 					653258851C9A7C81001513F2 = {
 						CreatedOnToolsVersion = 7.3;
@@ -246,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653258E51C9A7EF8001513F2 /* Info.plist in Resources */,
 				653258801C9A7C81001513F2 /* LaunchScreen.storyboard in Resources */,
 				6532587D1C9A7C80001513F2 /* Assets.xcassets in Resources */,
 				653258781C9A7C80001513F2 /* Main.storyboard in Resources */,
@@ -273,9 +457,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653258E11C9A7EF8001513F2 /* hmac.c in Sources */,
+				653258E31C9A7EF8001513F2 /* pwd2key.c in Sources */,
+				653258E71C9A7EF8001513F2 /* mztools.c in Sources */,
+				653258E01C9A7EF8001513F2 /* fileenc.c in Sources */,
+				653258AD1C9A7E01001513F2 /* FilePathURL.m in Sources */,
+				653258EA1C9A7EF8001513F2 /* SSZipArchive.m in Sources */,
+				653258E41C9A7EF8001513F2 /* sha1.c in Sources */,
+				653258DE1C9A7EF8001513F2 /* aestab.c in Sources */,
 				653258751C9A7C80001513F2 /* ViewController.m in Sources */,
-				6532587B1C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodeld in Sources */,
-				653258721C9A7C80001513F2 /* AppDelegate.m in Sources */,
+				653258721C9A7C80001513F2 /* MRAppDelegate.m in Sources */,
+				653258AE1C9A7E01001513F2 /* MRArchiveManager.mm in Sources */,
+				653258B21C9A7E89001513F2 /* CoreDataHandler.m in Sources */,
+				653258AC1C9A7E01001513F2 /* FileManager.m in Sources */,
+				653258E81C9A7EF8001513F2 /* unzip.c in Sources */,
+				653258E91C9A7EF8001513F2 /* zip.c in Sources */,
+				653258DD1C9A7EF8001513F2 /* aeskey.c in Sources */,
+				653258DC1C9A7EF8001513F2 /* aescrypt.c in Sources */,
+				653258DF1C9A7EF8001513F2 /* entropy.c in Sources */,
+				653258E21C9A7EF8001513F2 /* prng.c in Sources */,
+				653258E61C9A7EF8001513F2 /* ioapi.c in Sources */,
 				6532586F1C9A7C80001513F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,10 +620,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MangaReader_For_Ipad/FrameWorks",
+				);
 				INFOPLIST_FILE = MangaReader_For_Ipad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hengeCyche.MangaReader-For-Ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -430,10 +640,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MangaReader_For_Ipad/FrameWorks",
+				);
 				INFOPLIST_FILE = MangaReader_For_Ipad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hengeCyche.MangaReader-For-Ipad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -502,6 +721,7 @@
 				6532589C1C9A7C82001513F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6532589D1C9A7C82001513F2 /* Build configuration list for PBXNativeTarget "MangaReader_For_IpadTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +730,7 @@
 				6532589F1C9A7C82001513F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		653258A01C9A7C82001513F2 /* Build configuration list for PBXNativeTarget "MangaReader_For_IpadUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,21 +739,9 @@
 				653258A21C9A7C82001513F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		653258791C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6532587A1C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodel */,
-			);
-			currentVersion = 6532587A1C9A7C80001513F2 /* MangaReader_For_Ipad.xcdatamodel */;
-			path = MangaReader_For_Ipad.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 653258621C9A7C7E001513F2 /* Project object */;
 }

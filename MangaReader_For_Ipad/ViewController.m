@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "MRArchiveManager.h"
+#import "FileManager.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSArray *array=[[FileManager alloc] fetchFilesFromDocumentDirectory];
+    NSURL *file=[array firstObject];
+    
 }
 
 - (void)didReceiveMemoryWarning {
