@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import "CoreDataHandler.h"
 @interface MRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong,nonatomic) CoreDataHandler *cdh;
 @end
 

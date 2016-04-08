@@ -8,7 +8,7 @@
 
 
 #import "Constants.h"
-
+#import <CoreData/CoreData.h>
 @interface MRCoreData:NSObject
   
 @end

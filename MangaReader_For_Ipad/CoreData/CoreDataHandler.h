@@ -14,6 +14,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *model;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *coordinator;
 
+-(CoreDataHandler*)setUpCoreData;
 - (void)saveContext;
--(NSURL *)storeURL;
 @end

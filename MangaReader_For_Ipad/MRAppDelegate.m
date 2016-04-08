@@ -9,6 +9,7 @@
 #import "MRAppDelegate.h"
 #import "FileManager.h"
 #import "MRArchiveManager.h"
+
 @interface MRAppDelegate ()
 
 @end
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    self.cdh=[[CoreDataHandler alloc] setUpCoreData];
     return YES;
 }
 

@@ -106,16 +106,16 @@
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+    if([_context hasChanges])
+    {
+        NSError* error=nil;
+        if([_context save:&error]){NSLog(@"_context SAVED changes to persistent store");}
+        else
+        {
+            NSLog(@"Failed to save Context: Error:%@",error);
+            //need to add alert msg controller
         }
-    }
+    }else NSLog(@"Skipped _context save, there are no changes");
 }
 
 @end
