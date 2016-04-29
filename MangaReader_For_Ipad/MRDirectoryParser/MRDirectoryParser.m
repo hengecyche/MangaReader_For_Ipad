@@ -23,7 +23,7 @@
     NSArray *keys=[NSArray arrayWithObjects:NSURLNameKey,NSURLAddedToDirectoryDateKey,NSURLIsDirectoryKey,NSURLIsHiddenKey,NSURLIsRegularFileKey,NSURLVolumeURLKey,nil];
     
     
-    NSDirectoryEnumerator* dirEnumerator=[fileManager enumeratorAtURL:url includingPropertiesForKeys:keys options:NSDirectoryEnumerationSkipsPackageDescendants errorHandler:nil];
+    NSDirectoryEnumerator* dirEnumerator=[fileManager enumeratorAtURL:url includingPropertiesForKeys:keys options:NSDirectoryEnumerationSkipsSubdirectoryDescendants errorHandler:nil];
     
     NSMutableArray *files=[[NSMutableArray alloc] init];
     

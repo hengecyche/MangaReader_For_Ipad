@@ -9,6 +9,8 @@
 #import "MRAppDelegate.h"
 #import "FileManager.h"
 #import "MRArchiveManager.h"
+#import "MRCoreData.h"
+#import "MRFileListTableViewController.h"
 
 @interface MRAppDelegate ()
 
@@ -19,7 +21,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.cdh=[[CoreDataHandler alloc] setUpCoreData];
+    self.cdh=[[CoreDataHandler alloc] init];
+    //[[[MRCoreData alloc] init] demo];
+    
+    //_window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //_window.rootViewController=[[MRFileListTableViewController alloc] init];
+    //[_window makeKeyAndVisible];
+
     return YES;
 }
 

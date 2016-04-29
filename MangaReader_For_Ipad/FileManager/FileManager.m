@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FileManager()
--(NSString*)getExtensionFromFileWithURL:(NSURL*)url
+-(NSString*)getExtensionFromFileWithURL:(NSURL*)url;
 @end
 
 @implementation FileManager
