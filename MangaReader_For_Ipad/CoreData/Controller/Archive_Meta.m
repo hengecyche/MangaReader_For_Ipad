@@ -1,14 +1,14 @@
 //
-//  File_System.m
+//  Archive_Meta.m
 //  MangaReader_For_Ipad
 //
-//  Created by hengecyche on 4/9/16.
+//  Created by hengecyche on 5/15/16.
 //  Copyright © 2016 hengeCyche. All rights reserved.
 //
 
-#import "File_System.h"
+#import "Archive_Meta.h"
 
-@implementation File_System
+@implementation Archive_Meta
 
 // Insert code here to add functionality to your managed object subclass
 

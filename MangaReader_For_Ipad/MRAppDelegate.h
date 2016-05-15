@@ -11,6 +11,6 @@
 @interface MRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong,nonatomic) CoreDataHandler *cdh;
+@property (strong, nonatomic) CoreDataHandler *cdh;
 @end
 

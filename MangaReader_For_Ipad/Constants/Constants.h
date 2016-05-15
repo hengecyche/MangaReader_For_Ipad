@@ -19,4 +19,11 @@ static NSString *const ENTITY_FILE=@"File_System";
 static NSString *const ARCHIVE_FILE_TYPES=@"zip,cbz,rar,cbr";
 static NSString *const IMAGE_FILE_TYPES=@"jpg,png,jpeg,gif";
 
+typedef enum ARCHIVE_STATUS
+{
+    NOT_READ_YET,
+    READING,
+    COMPLETED
+    
+} ARCHIVE_STATUS;
 #endif /* Header_h */

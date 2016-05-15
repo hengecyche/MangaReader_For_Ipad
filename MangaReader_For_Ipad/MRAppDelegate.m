@@ -11,8 +11,8 @@
 #import "MRArchiveManager.h"
 #import "MRCoreData.h"
 #import "MRFileListTableViewController.h"
-
-@interface MRAppDelegate ()
+#import "MRFileDetailViewController.h"
+@interface MRAppDelegate ()<UISplitViewControllerDelegate>
 
 @end
 
@@ -24,9 +24,31 @@
     self.cdh=[[CoreDataHandler alloc] init];
     //[[[MRCoreData alloc] init] demo];
     
-    //_window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //_window.rootViewController=[[MRFileListTableViewController alloc] init];
-    //[_window makeKeyAndVisible];
+    _window=[[UIWindow alloc]
+             initWithFrame:
+             [[UIScreen mainScreen]
+              bounds]];
+    
+    //fileListController
+    UINavigationController *tableFileListViewController=[[UINavigationController alloc]
+                                                         initWithRootViewController:
+                                                         [[MRFileListTableViewController alloc] init]];
+    
+    //fileDetailController
+    UINavigationController *tableFileDetailViewController=[[UINavigationController alloc]
+                                                           initWithRootViewController:
+                                                           [[MRFileDetailViewController alloc]
+                                                            init]];
+    
+    NSArray *viewControllers=[NSArray arrayWithObjects:
+                              tableFileListViewController,tableFileDetailViewController,nil];
+    
+    //splitViewController
+    UISplitViewController *rootView=[[UISplitViewController alloc] init];
+    rootView.viewControllers=viewControllers;
+    
+    _window.rootViewController=rootView;
+    [_window makeKeyAndVisible];
 
     return YES;
 }
@@ -55,4 +77,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
 }
+
+
 @end

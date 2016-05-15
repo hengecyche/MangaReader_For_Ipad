@@ -1,8 +1,8 @@
 //
-//  File_System.h
+//  Archive_Meta.h
 //  MangaReader_For_Ipad
 //
-//  Created by hengecyche on 4/9/16.
+//  Created by hengecyche on 5/15/16.
 //  Copyright © 2016 hengeCyche. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface File_System : NSManagedObject
+@interface Archive_Meta : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -19,4 +19,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "File_System+CoreDataProperties.h"
+#import "Archive_Meta+CoreDataProperties.h"

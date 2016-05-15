@@ -74,6 +74,7 @@
         return nil;
     }
     
+    [self emptyTempDirectory];
     return thumbURL;
     
 }
@@ -196,6 +197,7 @@
     }
     
     if(!fileList and [fileList count]==0) return nil;
+    [self emptyTempDirectory];
     return fileList;
 }
 
@@ -337,5 +339,21 @@
         return YES;
     else
         return NO;
+}
+
+#pragma mark - Emptying Temp Directory
+
+-(BOOL)emptyTempDirectory
+{
+    NSURL *tempDirectory=[FilePathURL tempDirectory];
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    NSArray* fileList=[fileManager contentsOfDirectoryAtURL:tempDirectory includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsSubdirectoryDescendants error:nil];
+    
+    for(NSURL *url in fileList)
+    {
+        [fileManager removeItemAtURL:url error:nil];
+    }
+    return YES;
 }
 @end

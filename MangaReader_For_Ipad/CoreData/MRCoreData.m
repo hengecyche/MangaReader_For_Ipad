@@ -9,16 +9,8 @@
 #import "MRCoreData.h"
 #import "CoreDataHandler.h"
 #import "MRAppDelegate.h"
-#import "File_System.h"
 
 @implementation MRCoreData
-
--(void)demo
-{
-    
-    NSArray *result=[self fetchDataFromEntityWithEntityName:@"File_System"];
-    NSLog(@"Totoal Number Of Data's: %ld", (unsigned long)[result count]);
-}
 
 -(NSArray*)fetchDataFromEntityWithEntityName:(NSString*)entity
 {
