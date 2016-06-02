@@ -10,5 +10,5 @@
 #import "MRArchiveManager.h"
 
 @interface MRArchiveMetaDataParser:NSObject
-+(NSDictionary*)getMetaDataOfArchiveWithURL:(NSURL*)url;
+-(NSDictionary*)getMetaDataOfArchiveWithURL:(NSURL*)url;
 @end

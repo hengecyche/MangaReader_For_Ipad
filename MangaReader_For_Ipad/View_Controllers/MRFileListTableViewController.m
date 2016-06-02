@@ -100,11 +100,12 @@
     }else
     {
     
-        NSLog(@"%@",[url lastPathComponent]);
+        //NSLog(@"%@",[url lastPathComponent]);
         UINavigationController *nav=self.splitViewController.viewControllers[1];
         MRFileDetailViewController *detailView=(MRFileDetailViewController*)nav.topViewController;
 
         [detailView configureDetailViewForItemAtURL:url];
+        [detailView.view setNeedsDisplay];
     }
 }
 

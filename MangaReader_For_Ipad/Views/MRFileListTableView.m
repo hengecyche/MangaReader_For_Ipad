@@ -26,7 +26,7 @@
 -(UITableView*)configureTableView
 {
     UITableView *tableView=[[UITableView alloc] init];
-    tableView.contentMode=UIViewContentModeScaleToFill;
+    tableView.contentMode=UIViewContentModeBottom;
     
     tableView.backgroundColor=[UIColor whiteColor];
     return tableView;

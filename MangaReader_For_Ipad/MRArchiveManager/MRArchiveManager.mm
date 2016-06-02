@@ -73,8 +73,6 @@
         NSLog(@"Couldn't get the Thumbnail's URL");
         return nil;
     }
-    
-    [self emptyTempDirectory];
     return thumbURL;
     
 }
@@ -112,11 +110,12 @@
 -(NSURL*)getThumbURLForZIPArchiveWithFileName:(NSString*)fileName
 {
     //gets files after only extracting it in temp directory
-    NSURL *fileListDestination=[self extractArchiveAtDestination:[FilePathURL tempDirectory]];
+    NSURL *destination=[FilePathURL tempDirectory];
+    if(![self extractArchiveAtDestination:destination]) return nil;
     
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
-    NSArray* fileList=[fileManager contentsOfDirectoryAtURL:fileListDestination includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsSubdirectoryDescendants error:nil];
+    NSArray* fileList=[fileManager contentsOfDirectoryAtURL:destination includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsSubdirectoryDescendants error:nil];
     
     NSURL *fileURL=[[NSURL alloc] init];
     
@@ -197,7 +196,7 @@
     }
     
     if(!fileList and [fileList count]==0) return nil;
-    [self emptyTempDirectory];
+    
     return fileList;
 }
 
@@ -247,7 +246,7 @@
 #pragma mark - EXTRACTING METHODS
 
 //seperates the zop of extraction
--(NSURL*)extractArchiveAtDestination:(NSURL*)url
+-(BOOL)extractArchiveAtDestination:(NSURL*)url
 {
     NSURL *finalDestURL;
     if([self isZIPArchive])
@@ -261,18 +260,16 @@
     NSError *err;
     if([finalDestURL checkResourceIsReachableAndReturnError:&err]==NO)
     {
-        return nil;
+        NSLog(@"ErrorCode: %ld\nError Description:%@",(long)err.code,err.localizedDescription);
+        return NO;
     }
-    return finalDestURL;
+    return YES;
 }
 
 //handles all ZIP Extraction
 -(NSURL*)handleZIPExtractionAtDestination:(NSURL*)destinationURL
 {
-    NSString *destPath=[[[destinationURL absoluteURL] path]
-                     stringByAppendingPathComponent:
-                        [[[_archiveURL lastPathComponent] componentsSeparatedByString:@"."]
-                         firstObject]];
+    NSString *destPath=[destinationURL path];
     
     BOOL result=[SSZipArchive unzipFileAtPath:[_archiveURL path] toDestination:destPath];
     
@@ -292,13 +289,11 @@
     Unrar4iOS *rarFile=[[Unrar4iOS alloc] init];
     [rarFile unrarOpenFile:[_archiveURL path]];
     
-    NSString *destPath=[[[destinationURL absoluteURL] path]
-                        stringByAppendingPathComponent:
-                        [[[_archiveURL lastPathComponent] componentsSeparatedByString:@"."]
-                         firstObject]];
+    NSString *destPath=[destinationURL path];
+    
     if(![rarFile unrarFileTo:destPath overWrite:YES])
     {
-    
+        NSLog(@"Couldn't Rar File. Check the Specifications");
     }
     [rarFile unrarCloseFile];
     
@@ -343,17 +338,27 @@
 
 #pragma mark - Emptying Temp Directory
 
--(BOOL)emptyTempDirectory
+-(void)emptyTempDirectory
 {
-    NSURL *tempDirectory=[FilePathURL tempDirectory];
-    NSFileManager *fileManager=[NSFileManager defaultManager];
-    
-    NSArray* fileList=[fileManager contentsOfDirectoryAtURL:tempDirectory includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsSubdirectoryDescendants error:nil];
-    
-    for(NSURL *url in fileList)
-    {
-        [fileManager removeItemAtURL:url error:nil];
-    }
-    return YES;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *tempDirectory=[NSURL fileURLWithPath:NSTemporaryDirectory()];
+        NSFileManager *fileManager=[[NSFileManager alloc] init];
+        
+        NSError *error;
+        NSArray* fileList=[fileManager contentsOfDirectoryAtURL:tempDirectory includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsPackageDescendants error:&error];
+        
+        if(error)
+        {
+            NSLog(@"%ld %@",(unsigned long)error.code,error.localizedDescription);
+        }
+        //NSLog(@"Total No Of files In Temp Direcroy:%lu",(unsigned long)[fileList count]);
+        for(NSURL *url in fileList)
+        {
+            if(![fileManager removeItemAtURL:url error:nil])
+            {
+                NSLog(@"Couldn't Delete Files From Temporary Directory");
+            };
+        }
+    });
 }
 @end

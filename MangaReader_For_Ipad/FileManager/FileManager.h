@@ -10,4 +10,8 @@
 -(BOOL)isDirectory:(NSURL*)url;
 -(BOOL)isValidArchiveFile:(NSURL*)url;
 -(BOOL)isValidImageFile:(NSURL*)url;
+
+-(NSString*)getValidThumbNameOfArchive:(NSURL*)archiveURL;
+
+-(NSArray*)getFileNameListFromDirectory:(NSURL*)url;
 @end

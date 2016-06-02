@@ -8,10 +8,24 @@
 
 #import "MRArchiveMetaDataParser.h"
 #import "MRArchiveManager.h"
+#import "Constants.h"
+
+@interface MRArchiveMetaDataParser()
+@end
+
 @implementation MRArchiveMetaDataParser
-+(NSDictionary*)getMetaDataOfArchiveWithURL:(NSURL*)url
+-(NSDictionary*)getMetaDataOfArchiveWithURL:(NSURL*)url
 {
+    NSArray *objects=[NSArray arrayWithObjects:[url lastPathComponent],@"NOT_READ_YET",[url pathExtension],[NSNumber numberWithInt:0],[NSNumber numberWithBool:YES],[NSDate date],[NSNumber numberWithDouble:[self getTotalNumberOfImagesInArchive:url]],nil];
     
+    NSArray *keys=[NSArray arrayWithObjects:@"archiveName",@"archiveStatus",@"archiveType",@"currentPage",@"isManga",@"lastAccessedDate",@"numberOfImagesInArchive",nil];
+    
+    NSDictionary *metaDict=[NSDictionary dictionaryWithObjects:
+                            objects
+                            forKeys:
+                            keys
+                            ];
+    return metaDict;
 }
 
 -(double)getTotalNumberOfImagesInArchive:(NSURL*)url

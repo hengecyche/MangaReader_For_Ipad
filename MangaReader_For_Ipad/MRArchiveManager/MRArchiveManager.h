@@ -16,9 +16,9 @@
 -(id)initWithArchive:(NSURL*)url;
 
 -(NSArray*)getFileList;
-
+-(void)emptyTempDirectory;
 -(NSURL*)getThumbnailForArchive;
 
 //returns the destination of the extraction
--(NSURL*)extractArchiveAtDestination:(NSURL*)destURL;
+-(BOOL)extractArchiveAtDestination:(NSURL*)destURL;
 @end

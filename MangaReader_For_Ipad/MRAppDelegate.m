@@ -8,11 +8,16 @@
 
 #import "MRAppDelegate.h"
 #import "FileManager.h"
+#import "FilePathURL.h"
+
 #import "MRArchiveManager.h"
 #import "MRCoreData.h"
+
 #import "MRFileListTableViewController.h"
 #import "MRFileDetailViewController.h"
-@interface MRAppDelegate ()<UISplitViewControllerDelegate>
+#import "MRFileListCollectionViewController.h"
+
+@interface MRAppDelegate ()
 
 @end
 
@@ -21,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //if(getenv("NSZombieEnabled") || getenv("NSAutoreleaseFreedObjectCheckEnabled"))
+       //NSLog(@"NSZombieEnabled/NSAutoreleaseFreedObjectCheckEnabled enabled!");
+    
     self.cdh=[[CoreDataHandler alloc] init];
     //[[[MRCoreData alloc] init] demo];
     
@@ -30,7 +38,7 @@
               bounds]];
     
     //fileListController
-    UINavigationController *tableFileListViewController=[[UINavigationController alloc]
+   /* UINavigationController *tableFileListViewController=[[UINavigationController alloc]
                                                          initWithRootViewController:
                                                          [[MRFileListTableViewController alloc] init]];
     
@@ -45,7 +53,9 @@
     
     //splitViewController
     UISplitViewController *rootView=[[UISplitViewController alloc] init];
-    rootView.viewControllers=viewControllers;
+    rootView.viewControllers=viewControllers;*/
+    
+    UINavigationController *rootView=[[UINavigationController alloc] initWithRootViewController:[[MRFileListCollectionViewController alloc] initWithURL:[FilePathURL documentDirectory]]];
     
     _window.rootViewController=rootView;
     [_window makeKeyAndVisible];
@@ -70,12 +80,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
+    [[MRArchiveManager alloc] emptyTempDirectory];
 }
 
 
