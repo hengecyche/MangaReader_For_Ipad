@@ -9,7 +9,7 @@
 #import "MRFileListCollectionViewController.h"
 #import "MRFileListCollectionViewCell.h"
 #import "MRImageListProcessor.h"
-#import "MRMangaReaderVC.h"
+#import "MRMangaReaderPVC.h"
 
 #import "MRDirectoryParser.h"
 #import "FileManager.h"
@@ -137,20 +137,20 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
             [tempDict setObject:@"ARCHIVE_FILE" forKey:@"FILE_TYPE"];
         }
         
-        if([[FileManager alloc] isDirectory:fileURL])
+        if([[FileManager alloc] isValidImageFile:fileURL])
         {
             [tempDict setObject:@"IMAGE_FILE" forKey:@"FILE_TYPE"];
         }
         
         NSDictionary *dictData=[NSDictionary dictionaryWithDictionary:tempDict];
-        [self performSelectorOnMainThread:@selector(transitionToMangaViewerWithDictData:) withObject:dictData waitUntilDone:YES];
+        MRMangaReaderPVC *mReaderPVC=[[MRMangaReaderPVC alloc] initWithMetaData:dictData];
+        [self performSelectorOnMainThread:@selector(transitionToMangaViewer:) withObject:mReaderPVC waitUntilDone:YES];
     });
 }
 
--(void)transitionToMangaViewerWithDictData:(NSDictionary*)dictData
+-(void)transitionToMangaViewer:(MRMangaReaderPVC*)mReaderPVC
 {
-    MRMangaReaderVC *mReaderVC=[[MRMangaReaderVC alloc] initWithMetaData:dictData];
-    [self.navigationController pushViewController:mReaderVC animated:YES];
+    [self.navigationController pushViewController:mReaderPVC animated:YES];
 }
 
 #pragma mark - Utility Methods

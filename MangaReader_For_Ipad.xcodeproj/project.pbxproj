@@ -42,14 +42,14 @@
 		653258F51C9A7FD7001513F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653258F41C9A7FD7001513F2 /* Foundation.framework */; };
 		655406CD1CEDE5EF000CC533 /* File_Thumb+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 655406CA1CEDE5EF000CC533 /* File_Thumb+CoreDataProperties.m */; };
 		655406CE1CEDE5EF000CC533 /* File_Thumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 655406CC1CEDE5EF000CC533 /* File_Thumb.m */; };
+		6560A85E1D14A5BE006B6B8F /* MRMangaReaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6560A85D1D14A5BE006B6B8F /* MRMangaReaderVC.m */; };
 		658A28831CE8A9DE007DA762 /* MRArchiveMetaDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 658A28821CE8A9DE007DA762 /* MRArchiveMetaDataParser.m */; };
 		658A28881CE8AAB4007DA762 /* Archive_Meta+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 658A28851CE8AAB4007DA762 /* Archive_Meta+CoreDataProperties.m */; };
 		658A28891CE8AAB4007DA762 /* Archive_Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 658A28871CE8AAB4007DA762 /* Archive_Meta.m */; };
 		65946B0D1CB7EA78004BE1F1 /* MRDirectoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65946B0C1CB7EA78004BE1F1 /* MRDirectoryParser.m */; };
 		65946B101CB7FB4D004BE1F1 /* MRCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 65946B0F1CB7FB4D004BE1F1 /* MRCoreData.m */; };
 		65946B151CB7FEB4004BE1F1 /* MangaReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65946B131CB7FEB4004BE1F1 /* MangaReader.xcdatamodeld */; };
-		65B73E1D1D001A64003FCC7D /* MRMangaReaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B73E1C1D001A64003FCC7D /* MRMangaReaderVC.m */; };
-		65B73E211D003F4A003FCC7D /* MRMangaReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B73E201D003F4A003FCC7D /* MRMangaReaderView.m */; };
+		65B73E1D1D001A64003FCC7D /* MRMangaReaderPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B73E1C1D001A64003FCC7D /* MRMangaReaderPVC.m */; };
 		65DCB2FA1CF218BA0072B560 /* MRArchiveDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DCB2F71CF218BA0072B560 /* MRArchiveDetailView.m */; };
 		65DCB2FB1CF218BA0072B560 /* MRFileListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DCB2F91CF218BA0072B560 /* MRFileListTableView.m */; };
 		65DCB3041CF218D80072B560 /* MRFileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DCB2FD1CF218D80072B560 /* MRFileDetailViewController.m */; };
@@ -147,6 +147,8 @@
 		655406CA1CEDE5EF000CC533 /* File_Thumb+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "File_Thumb+CoreDataProperties.m"; path = "../../File_Thumb+CoreDataProperties.m"; sourceTree = "<group>"; };
 		655406CB1CEDE5EF000CC533 /* File_Thumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File_Thumb.h; path = ../../File_Thumb.h; sourceTree = "<group>"; };
 		655406CC1CEDE5EF000CC533 /* File_Thumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File_Thumb.m; path = ../../File_Thumb.m; sourceTree = "<group>"; };
+		6560A85C1D14A5AB006B6B8F /* MRMangaReaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRMangaReaderVC.h; path = View_Controllers/MRMangaReaderVC.h; sourceTree = "<group>"; };
+		6560A85D1D14A5BE006B6B8F /* MRMangaReaderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMangaReaderVC.m; path = View_Controllers/MRMangaReaderVC.m; sourceTree = "<group>"; };
 		658A28811CE8A9BB007DA762 /* MRArchiveMetaDataParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRArchiveMetaDataParser.h; sourceTree = "<group>"; };
 		658A28821CE8A9DE007DA762 /* MRArchiveMetaDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRArchiveMetaDataParser.m; sourceTree = "<group>"; };
 		658A28841CE8AAB4007DA762 /* Archive_Meta+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Archive_Meta+CoreDataProperties.h"; path = "Controller/Archive_Meta+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -158,10 +160,8 @@
 		65946B0E1CB7FB35004BE1F1 /* MRCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MRCoreData.h; sourceTree = "<group>"; };
 		65946B0F1CB7FB4D004BE1F1 /* MRCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreData.m; sourceTree = "<group>"; };
 		65946B141CB7FEB4004BE1F1 /* MangaReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MangaReader.xcdatamodel; sourceTree = "<group>"; };
-		65B73E1B1D001A42003FCC7D /* MRMangaReaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRMangaReaderVC.h; path = View_Controllers/MRMangaReaderVC.h; sourceTree = "<group>"; };
-		65B73E1C1D001A64003FCC7D /* MRMangaReaderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMangaReaderVC.m; path = View_Controllers/MRMangaReaderVC.m; sourceTree = "<group>"; };
-		65B73E201D003F4A003FCC7D /* MRMangaReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMangaReaderView.m; path = Views/MRMangaReaderView.m; sourceTree = "<group>"; };
-		65B73E231D003F6F003FCC7D /* MRMangaReaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRMangaReaderView.h; path = Views/MRMangaReaderView.h; sourceTree = "<group>"; };
+		65B73E1B1D001A42003FCC7D /* MRMangaReaderPVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MRMangaReaderPVC.h; path = View_Controllers/MRMangaReaderPVC.h; sourceTree = "<group>"; };
+		65B73E1C1D001A64003FCC7D /* MRMangaReaderPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRMangaReaderPVC.m; path = View_Controllers/MRMangaReaderPVC.m; sourceTree = "<group>"; };
 		65DCB2F61CF218BA0072B560 /* MRArchiveDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRArchiveDetailView.h; path = Views/MRArchiveDetailView.h; sourceTree = "<group>"; };
 		65DCB2F71CF218BA0072B560 /* MRArchiveDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRArchiveDetailView.m; path = Views/MRArchiveDetailView.m; sourceTree = "<group>"; };
 		65DCB2F81CF218BA0072B560 /* MRFileListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRFileListTableView.h; path = Views/MRFileListTableView.h; sourceTree = "<group>"; };
@@ -477,10 +477,10 @@
 		65B73E241D0041E2003FCC7D /* MRMangaReader */ = {
 			isa = PBXGroup;
 			children = (
-				65B73E1B1D001A42003FCC7D /* MRMangaReaderVC.h */,
-				65B73E1C1D001A64003FCC7D /* MRMangaReaderVC.m */,
-				65B73E231D003F6F003FCC7D /* MRMangaReaderView.h */,
-				65B73E201D003F4A003FCC7D /* MRMangaReaderView.m */,
+				6560A85C1D14A5AB006B6B8F /* MRMangaReaderVC.h */,
+				6560A85D1D14A5BE006B6B8F /* MRMangaReaderVC.m */,
+				65B73E1B1D001A42003FCC7D /* MRMangaReaderPVC.h */,
+				65B73E1C1D001A64003FCC7D /* MRMangaReaderPVC.m */,
 			);
 			name = MRMangaReader;
 			sourceTree = "<group>";
@@ -644,13 +644,13 @@
 				653258E11C9A7EF8001513F2 /* hmac.c in Sources */,
 				65DCB30F1CF62C5A0072B560 /* MRImageListProcessor.m in Sources */,
 				653258E31C9A7EF8001513F2 /* pwd2key.c in Sources */,
+				6560A85E1D14A5BE006B6B8F /* MRMangaReaderVC.m in Sources */,
 				65946B101CB7FB4D004BE1F1 /* MRCoreData.m in Sources */,
 				653258E71C9A7EF8001513F2 /* mztools.c in Sources */,
 				652CC0481CD1EC9400498AFF /* Constants.m in Sources */,
 				65DCB3061CF218D80072B560 /* MRFileListTableViewController.m in Sources */,
 				653258E01C9A7EF8001513F2 /* fileenc.c in Sources */,
 				658A28891CE8AAB4007DA762 /* Archive_Meta.m in Sources */,
-				65B73E211D003F4A003FCC7D /* MRMangaReaderView.m in Sources */,
 				653258AD1C9A7E01001513F2 /* FilePathURL.m in Sources */,
 				653258EA1C9A7EF8001513F2 /* SSZipArchive.m in Sources */,
 				653258E41C9A7EF8001513F2 /* sha1.c in Sources */,
@@ -665,7 +665,7 @@
 				65946B0D1CB7EA78004BE1F1 /* MRDirectoryParser.m in Sources */,
 				653258B21C9A7E89001513F2 /* CoreDataHandler.m in Sources */,
 				658A28881CE8AAB4007DA762 /* Archive_Meta+CoreDataProperties.m in Sources */,
-				65B73E1D1D001A64003FCC7D /* MRMangaReaderVC.m in Sources */,
+				65B73E1D1D001A64003FCC7D /* MRMangaReaderPVC.m in Sources */,
 				653258AC1C9A7E01001513F2 /* FileManager.m in Sources */,
 				653258E81C9A7EF8001513F2 /* unzip.c in Sources */,
 				653258E91C9A7EF8001513F2 /* zip.c in Sources */,

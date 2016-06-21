@@ -14,7 +14,8 @@
 {
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
-    NSURL *newURL=[[self documentDirectory] URLByAppendingPathComponent:@"Database" isDirectory:YES];
+
+    NSURL *newURL=[[self libraryDirectory] URLByAppendingPathComponent:@"Database" isDirectory:YES];
     if([newURL checkResourceIsReachableAndReturnError:nil]==NO)
     {
         NSError *error;
@@ -26,6 +27,13 @@
         }
     }
     return newURL;
+}
+
++(NSURL*)libraryDirectory
+{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSURL *url=[NSURL fileURLWithPath:[paths objectAtIndex:0]];
+    return url;
 }
 
 +(NSURL*)documentDirectory
