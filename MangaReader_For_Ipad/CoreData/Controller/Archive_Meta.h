@@ -2,7 +2,7 @@
 //  Archive_Meta.h
 //  MangaReader_For_Ipad
 //
-//  Created by hengecyche on 5/15/16.
+//  Created by hengecyche on 6/23/16.
 //  Copyright © 2016 hengeCyche. All rights reserved.
 //
 

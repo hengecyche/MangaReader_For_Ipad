@@ -2,7 +2,7 @@
 //  Archive_Meta+CoreDataProperties.m
 //  MangaReader_For_Ipad
 //
-//  Created by hengecyche on 5/15/16.
+//  Created by hengecyche on 6/23/16.
 //  Copyright © 2016 hengeCyche. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,7 +13,7 @@
 
 @implementation Archive_Meta (CoreDataProperties)
 
-@dynamic archiveName;
+@dynamic archiveURL;
 @dynamic archiveStatus;
 @dynamic archiveType;
 @dynamic currentPage;

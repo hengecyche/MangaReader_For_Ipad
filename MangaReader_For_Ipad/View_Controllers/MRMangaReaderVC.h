@@ -11,5 +11,6 @@
 
 @interface MRMangaReaderVC:UIViewController
 
+@property (nonatomic) NSURL *imgURL;
 -(id)initWithURL:(NSURL*)url;
 @end

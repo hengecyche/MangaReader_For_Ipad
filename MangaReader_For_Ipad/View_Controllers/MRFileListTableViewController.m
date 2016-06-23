@@ -13,7 +13,7 @@
 #import "MRFileListTableView.h"
 #import "MRFileDetailViewController.h"
 
-@interface MRFileListTableViewController()
+@interface MRFileListTableViewController()<UISplitViewControllerDelegate>
 -(UITableView*)getTableViewForTableViewController;
 @property NSArray *fileList;
 @end

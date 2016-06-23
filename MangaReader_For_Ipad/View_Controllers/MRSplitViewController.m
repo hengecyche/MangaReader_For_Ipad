@@ -8,6 +8,11 @@
 
 #import "MRSplitViewController.h"
 #import "MRFileListTableViewController.h"
+
+@interface MRSplitViewController()<UISplitViewControllerDelegate>
+
+@end
+
 @implementation MRSplitViewController
 
 -(id)init

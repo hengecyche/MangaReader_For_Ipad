@@ -42,7 +42,7 @@
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        //abort();
     }
 }
 
@@ -109,7 +109,10 @@
     if([_context hasChanges])
     {
         NSError* error=nil;
-        if([_context save:&error]){NSLog(@"_context SAVED changes to persistent store");}
+        if([_context save:&error])
+        {
+            //NSLog(@"_context SAVED changes to persistent store");
+        }
         else
         {
             NSLog(@"Failed to save Context: Error:%@",error);

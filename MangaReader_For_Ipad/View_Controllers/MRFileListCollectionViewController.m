@@ -16,6 +16,7 @@
 #import "FilePathURL.h"
 #import "MRArchiveManager.h"
 
+#import "HCAlertController.h"
 
 
 
@@ -119,16 +120,46 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 
 -(void)handleTransitionToMangaViewerWithURL:(NSURL*)fileURL
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //activity Indicator before transition begins
+    UIActivityIndicatorView *activity=[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [activity setFrame:self.view.bounds];
+    [self.view addSubview:activity];
+    [self.view bringSubviewToFront:activity];
+    
+    [activity startAnimating];
+    activity.hidesWhenStopped=YES;
+    
+    //setting up meta data before transition begins
+    
+    
+    dispatch_queue_t transitionQueue;
+    transitionQueue = dispatch_queue_create("com.mangareader.transitionQueue", NULL);
+    
+    dispatch_async(transitionQueue,^{
+        //image_MangaList
+        MRImageListProcessor *imgListProcessor=[[MRImageListProcessor alloc] initWithURL:fileURL];
+        NSArray *mangaImageList=[imgListProcessor getMangaImageList];
+        //check to see if the archive has any image files
+        if([mangaImageList count]==0)
+        {
+            HCAlertController *alertCon=[HCAlertController alertWithTitle:@"No Images"
+                                                                  message:@"App Couldn't Find Any Image In The Archive!!!"];
+            [self presentViewController:alertCon animated:YES
+                             completion:^(){
+                                 //[activity stopAnimating];
+                                 //return;
+                             }
+             ];
+            [activity stopAnimating];
+            return;
+        }
+        
         NSMutableDictionary *tempDict=[[NSMutableDictionary alloc] init];
         
         //file_NAME
         [tempDict setObject:[fileURL lastPathComponent] forKey:@"FILE_NAME"];
         [tempDict setObject:fileURL forKey:@"ORIGINAL_FILE_URL"];
         
-        //image_MangaList
-        MRImageListProcessor *imgListProcessor=[[MRImageListProcessor alloc] initWithURL:fileURL];
-        NSArray *mangaImageList=[imgListProcessor getMangaImageList];
         [tempDict setObject:mangaImageList forKey:@"MANGA_IMAGE_LIST"];
         
         //get CoreData And Other Info If File Is Archive
@@ -143,9 +174,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
         }
         
         NSDictionary *dictData=[NSDictionary dictionaryWithDictionary:tempDict];
+        
         MRMangaReaderPVC *mReaderPVC=[[MRMangaReaderPVC alloc] initWithMetaData:dictData];
-        [self performSelectorOnMainThread:@selector(transitionToMangaViewer:) withObject:mReaderPVC waitUntilDone:YES];
+        
+
+        dispatch_async(dispatch_get_main_queue(),^{
+            [activity stopAnimating];
+            [self transitionToMangaViewer:mReaderPVC];
+        });
     });
+
 }
 
 -(void)transitionToMangaViewer:(MRMangaReaderPVC*)mReaderPVC

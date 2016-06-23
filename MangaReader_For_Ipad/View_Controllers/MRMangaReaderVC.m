@@ -8,8 +8,8 @@
 
 #import "MRMangaReaderVC.h"
 @interface MRMangaReaderVC()<UIScrollViewDelegate>
+@property (nonatomic) UIScrollView *mainView;
 @property (nonatomic) UIImageView *imageView;
-@property (nonatomic) NSURL *imgURL;
 @end
 
 
@@ -24,27 +24,91 @@
     
     return self;
 }
+
 -(void)viewDidLoad
 {
-    UIScrollView *mainView=[[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self viewLoadWithFrame:[[UIScreen mainScreen] bounds]];
+}
+-(void)viewLoadWithFrame:(CGRect)frame
+{
+    //;
     
-    _imageView=[[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:[_imgURL path]]];
-    [_imageView setFrame:mainView.bounds];
-    [_imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self setImageView];
+    _mainView=[[UIScrollView alloc] initWithFrame:frame];
     
-    [mainView addSubview:_imageView];
-    [mainView setContentSize:CGSizeMake(_imageView.bounds.size.width,_imageView.bounds.size.height)];
-    mainView.scrollEnabled=YES;
-    mainView.bounces=NO;
-    mainView.maximumZoomScale=8.0;
-    mainView.minimumZoomScale=1.0;
-    mainView.delegate=self;
-    self.view=mainView;
+    [_mainView addSubview:_imageView];
+    [_mainView setContentSize:CGSizeMake(_imageView.frame.size.width,_imageView.frame.size.height)];
+    _mainView.scrollEnabled=YES;
+    _mainView.bounces=NO;
+    _mainView.maximumZoomScale=6.0;
+    _mainView.minimumZoomScale=1.0;
+    
+    _mainView.delegate=self;
+    [self setView:_mainView];
 }
 
+-(void)setImageView
+{
+    UIImage *mainImage=[UIImage imageWithContentsOfFile:[_imgURL path]];
+    
+    float imgHeight=mainImage.size.height;
+    float imgWidth=mainImage.size.width;
+    
+    CGRect scrBounds=[[UIScreen mainScreen] bounds];
+    float scrHeight=scrBounds.size.height;
+    float scrWidth=scrBounds.size.width;
+    
+    float imgViewX = 0,imgViewY=0,imgViewWidth=0,imgViewHeight=0;
+    if(imgWidth>imgHeight)
+    {
+        NSLog(@"Width");
+        float heightRatio=imgHeight/imgWidth;
+        
+        imgViewWidth=scrBounds.size.width;
+        imgViewHeight=imgViewWidth*heightRatio;
+        
+
+        imgViewY=scrHeight/2-imgViewHeight/2;
+        NSLog(@"%f",imgViewY);
+    }
+    
+    if(imgWidth==imgHeight)
+    {
+        NSLog(@"Equal");
+        imgViewWidth=imgViewHeight=scrBounds.size.width;
+        imgViewY=scrHeight/2-imgViewWidth/2;
+    }
+    
+    if(imgHeight>imgWidth)
+    {
+        NSLog(@"Height");
+        float widthRatio=imgWidth/imgHeight;
+        
+        imgViewHeight=scrBounds.size.height;
+        imgViewWidth=imgViewHeight*widthRatio;
+        
+        
+        imgViewX=scrWidth/2-imgViewWidth/2;
+
+    }
+    
+    CGRect frameRect=CGRectMake(imgViewX,imgViewY,imgViewWidth,imgViewHeight);
+    _imageView=[[UIImageView alloc] initWithImage:mainImage];
+    [_imageView setFrame:frameRect];
+    [_imageView setContentMode:UIViewContentModeScaleAspectFill];
+}
+
+#pragma mark - ScrollView Delegate
 -(UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
 {
     return _imageView;
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    
+    //NSLog(@"%f X %f",(*targetContentOffset).x,(*targetContentOffset).y);
+    //NSLog(@"%f X %f",velocity.x,velocity.y);
 }
 
 

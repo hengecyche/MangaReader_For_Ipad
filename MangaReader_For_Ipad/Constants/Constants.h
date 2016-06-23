@@ -21,9 +21,9 @@ static NSString *const IMAGE_FILE_TYPES=@"jpg,png,jpeg,gif";
 
 typedef enum ARCHIVE_STATUS
 {
-    NOT_READ_YET,
-    READING,
-    COMPLETED
+    NOT_READ_YET=0,
+    READING=1,
+    COMPLETED=2
     
 } ARCHIVE_STATUS;
 #endif /* Header_h */
